@@ -70,7 +70,7 @@ jobs:
         working-directory: ${{ github.workspace }}
         shell: powershell
         run: |
-          (Get-Content ${{ github.workspace }}\Ishiiruka\Source\Core\UICommon\DiscordPresence.cpp) -replace '622143930900807680', '641740042007740456' | Out-File -encoding ASCII ${{ github.workspace }}\Ishiiruka\Source\Core\UICommon\DiscordPresence.cpp
+          (Get-Content ${{ github.workspace }}\Ishiiruka\Source\Core\UICommon\DiscordPresence.cpp) -replace '622143930900807680', '937791911480135731' | Out-File -encoding ASCII ${{ github.workspace }}\Ishiiruka\Source\Core\UICommon\DiscordPresence.cpp
 
       - name: "Build Dolphin"
         shell: cmd
