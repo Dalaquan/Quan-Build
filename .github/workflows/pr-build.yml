@@ -106,7 +106,7 @@ jobs:
       - name: "Package Artifact"
         working-directory: ${{ github.workspace }}
         run: |
-          $FILE_NAME="WomBuild.zip"
+          $FILE_NAME="QuanBuild.zip"
           mkdir artifact
           cd .\Binary\x64\
           7z a $FILE_NAME .\*
@@ -116,7 +116,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v2-preview
         with:
-          name: "WomBuild"
+          name: "QuanBuild"
           path: "./artifact/"
 
       - name: "Create Release"
