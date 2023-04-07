@@ -41,6 +41,11 @@ jobs:
       - name: "Setup MSBuild"
         uses: microsoft/setup-msbuild@v1
 
+      - name: "Install DirectX SDK"
+        shell: powershell
+        run: |
+          choco install directx-sdk
+
       - name: "Clone Dolphin"
         shell: cmd
         run: |
