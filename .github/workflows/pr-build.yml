@@ -106,7 +106,7 @@ jobs:
       - name: "Package Artifact"
         working-directory: ${{ github.workspace }}
         run: |
-          $FILE_NAME="WomBuild.zip"
+          $FILE_NAME="QuanBuild.zip"
           mkdir artifact
           cd .\Binary\x64\
           7z a $FILE_NAME .\*
@@ -116,7 +116,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v2-preview
         with:
-          name: "WomBuild"
+          name: "QuanBuild"
           path: "./artifact/"
 
       - name: "Create Release"
@@ -127,7 +127,7 @@ jobs:
         with:
           tag_name: ${{ env.GIT_HASH }}
           release_name: Release ${{ env.GIT_HASH }}
-          body: "${{steps.wombuild_version.outputs.prop}}"
+          body: "${{steps.quanbuild_version.outputs.prop}}"
           draft: false
           prerelease: false
 
@@ -138,6 +138,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "${{ github.workspace }}/artifact/WomBuild.zip"
+          asset_path: "${{ github.workspace }}/artifact/QuanBuild.zip"
           asset_name: "WomBuild.zip"
           asset_content_type: application/zip
